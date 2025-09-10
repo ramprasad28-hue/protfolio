@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRINETRA</title>
+</head>
+<style>
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    button a{
+       background: #181a1b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+    }
+</style>
+<body>
+   <h2> TRINETRA – IoT Based Cyber Defense System</h2>
+
+<h3>🔹 Introduction</h3>
+<p>
+
+TRINETRA is a cybersecurity project designed to detect, analyze, and defend against network attacks in real time. It integrates Red Team (attackers), Blue Team (defenders), Honeypot (trap system), and IoT (ESP32/ESP8266 for alerts) into a single ecosystem.
+
+This project gives a hands-on simulation of real-world cyberattacks and defenses, making it both educational and practical for modern cybersecurity applications.
+
+</p>
+---
+
+<h3>🔹 Project Flow (Top to Bottom)</h3>
+<p>
+1. Red Team (Attacker Simulation)
+
+Red Team uses scanning techniques (SYN, FIN, NULL, Xmas scans, etc.) to probe the target network.
+
+Their role is to behave like real attackers trying to find vulnerabilities in servers or systems.
+
+
+
+2. Blue Team (Defender Monitoring)
+
+The Blue Team continuously monitors incoming traffic using Python scripts (Scapy library).
+
+They analyze TCP/IP flags and packet behavior to detect abnormal scans or intrusion attempts.
+
+When a scan or suspicious activity is detected, the Blue Team system logs the details.
+
+
+
+3. Honeypot (Deception System)
+
+The Honeypot pretends to be a real vulnerable machine (fake server).
+
+It tricks attackers into interacting with it and collects information about their tools, IP addresses, and behavior.
+
+This intelligence is shared with the Blue Team to improve defenses.
+
+
+
+4. IoT Device (ESP32/ESP8266)
+
+Once an attack is detected, an alert is sent to an IoT device.
+
+The ESP32 can trigger a buzzer, LED light, or message notification to immediately alert the system administrator.
+
+This brings real-time physical awareness of cyber threats.
+
+
+
+5. Defense Action (Blocking)
+
+The Blue Team system automatically blocks the attacker’s IP address to stop further attacks.
+
+This ensures that the protected server or network remains safe from intrusion attempts.
+
+
+</p>
+
+
+---
+
+<h3>🔹 Key Features</h3>
+
+<p>
+✅ Detects multiple scan types (SYN, NULL, FIN, Xmas).
+✅ Honeypot traps attackers for intelligence gathering.
+✅ IoT-based real-time alerting (ESP32/ESP8266).
+✅ Automated IP blocking for defense.
+✅ Educational project simulating Red vs Blue cybersecurity operations.
+</p>
+
+---
+
+<h3>🔹 Role of Each Component</h3>
+
+<p>
+Red Team: Simulates attacker behavior.
+
+Blue Team: Detects, analyzes, and defends against threats.
+
+Honeypot: Gathers intelligence and misleads attackers.
+
+IoT Device: Provides real-time physical alerts.
+</p>
+
+
+
+---
+
+<h3>
+
+🔹 Applications</h3>
+
+<p>College/University cybersecurity learning projects.
+
+Simulation of real-world network defense environments.
+
+Small-scale intrusion detection systems (IDS).
+
+Can be extended to industry use with cloud-based alerts and AI analysis.</p>
+
+
+
+---
+
+<h3>🔹 Conclusion</h3>
+
+<p>TRINETRA demonstrates how cybersecurity defense systems work in reality by combining network monitoring, deception, and IoT alerts. It gives students practical exposure to both offensive (Red Team) and defensive (Blue Team) roles while integrating cutting-edge IoT technology for 
+    real-time alerts.</p>
+    <button type="submit"><a href="comport.html">Back to Portfolio</a></button>
+</body>
+</html>

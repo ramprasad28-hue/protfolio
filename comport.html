@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background: #f4f6f9;
+      color: #333;
+    }
+    nav {
+      background:linear-gradient(135deg, #0077b6, #50c1e7, #0096c7);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration:underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    #home {
+      background: linear-gradient(135deg, #0077b6, #50c1e7, #0096c7);
+      color: white;
+      padding: 100px 20px;
+    }
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    #about img {
+      width: 150px;
+      border-radius: 5%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    #about div {
+      max-width: 400px;
+    }
+    .skill {
+      background: #fff;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .skill-bar {
+      height: 10px;
+      background: #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .skill-bar span {
+      display: block;
+      height: 100%;
+      background: #0077b6;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+       transform: translateY(-10px);
+    }
+    .project{
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+       transform: translateY(-10px);
+    }
+    form {
+      background:whitesmoke;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    input:focus, textarea:focus {
+      border-color: #0077b6;
+      outline: none;
+    }
+    button {
+      background: #0077b6;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005f86;
+    }
+    footer {
+      background:linear-gradient(135deg, #0077b6, #50c1e7, #0096c7);
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+    #img{
+      height: 2%;
+      width: 2%;
+    }
+    #skills:hover{
+      /* transform-style: preserve-3d; */
+       transform: translateY(-10px);
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="home">
+    <h1>Hi, I'm Ram 👋</h1>
+    <p>A beginner Web Designer learning HTML, CSS, and JS.</p>
+  </section>
+  <section id="about">
+    <img src="Mine.jpg" alt="Profile">
+    <div>
+      <h2>About Me</h2>
+      <p>I am a Computer Science student, passionate about web design and development.  
+      I love learning new technologies and building small projects.</p>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill">
+      HTML
+      <div class="skill-bar"><span style="width:80%"></span></div>
+    </div>
+    <div class="skill">
+      CSS
+      <div class="skill-bar"><span style="width:70%"></span></div>
+    </div>
+    <div class="skill">
+      JavaScript
+      <div class="skill-bar"><span style="width:50%"></span></div>
+    </div>
+  </section>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Profile Card</h3>
+        <p>A simple profile card built using HTML & CSS.</p>
+        <a href="minipro.html">Profile Card</a>
+      </div>
+      <div class="project">
+        <h3>Contact Form</h3>
+        <p>A working contact form with JavaScript validation.</p>
+        <a href="contactform.html">Contact Form</a>
+      </div>
+      <div class="project">
+        <h3> TRINETRA – IoT Based Cyber Defense System(ongoing)</h3>
+        <p>Project:
+
+           TRINETRA is a cybersecurity project that detects and defends against network attacks. It uses:
+
+          <pre>Red Team → simulates attacks
+
+Blue Team → monitors and blocks threats
+
+Honeypot → traps attackers and collects data
+
+ESP32 IoT Device → sends real-time alerts
+                  </pre>
+
+            This project combines network security and IoT to protect servers and networks effectively.</p>
+            <a href="about trinet.html">TRINETRA</a>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form method="post" action="#" id="contactform" onsubmit="return validate()">
+
+       <input type="text" id="name" placeholder="Enter your name"><br><br>
+        <input type="email" id="email" placeholder="someone@gmail.com"><br><br>
+        <input type="text" id="sub" placeholder="Subject"><br><br>
+        <textarea name="message" id="msg" rows="5" placeholder="Your message"></textarea><br><br>
+        <button type="submit">Send message✉️</button><br><br>
+    </form>
+  </section>
+  <footer>
+    <p>© 2025 Ram Prasad | Portfolio</p>
+    <a href="https://www.linkedin.com/in/ramprasad-s-m-5849662a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+        <img src="linkedin_3991775.png" alt="linkedin" id="img">
+    </a>
+    <a href="https://www.instagram.com/x_._.ram_?igsh=MTFqbWN1eTNvZ2pvZA==">
+        <img src="307779-P800TT-551.jpg" alt="" id="img"></a>
+        <a href="saravananramprasad776@gmail.com" ><img src="mail.jpg" alt="" id="img"></a>
+  </footer>
+  <script>
+    function validate(){
+           let n=document.getElementById("name").value.trim();
+           let em=document.getElementById("email").value.trim();
+           let sub=document.getElementById("sub").value.trim();
+           let msg=document.getElementById("msg").value.trim();
+            if(n===""){
+                window.alert("Name column must be filled");
+                return false;
+            }else if(em===""){
+                window.alert("enter a valid Email");return false;
+            }else if(sub===""){
+                window.alert("subject must be filled");return false;
+            }else if(msg.length<10){
+                window.alert("Message should be Longer or atleast 10 Characters");return false;
+            }else{
+                window.alert("Form Submitted Successfully😊");return true; fm.reset();
+              }
+            }
+  </script>
+
+</body>
+</html>
