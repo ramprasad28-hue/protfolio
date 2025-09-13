@@ -122,16 +122,35 @@
       text-align: center;
       padding: 15px;
     }
-    #img{
+    #img,image,imag{
       height: 2%;
       width: 2%;
     }
-    #skills:hover{
-      /* transform-style: preserve-3d; */
-       transform: translateY(-10px);
+    .skill:hover{
+      transform-style: preserve-3d;
+       transform:scale(1.10);
     }
     html{
       scroll-behavior: smooth;
+    }
+    .project:hover{
+        transform: scale(1.10);
+    }
+    #mine:hover{
+      transform: scale(1.10);
+    }
+    #home{
+      font-size: 3rem;
+      font-weight: bold;
+      background:linear-gradient(135deg, #034f59, #50c1e7, #0096c7);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color: transparent ;
+      background-size: 200% auto;
+      animation:gradientMove 5s linear infinite;
+    }
+    @keyframes gradientMove{
+      0% {background-position: 10%;}
+      100%{background-position:200% ;}
     }
   </style>
 </head>
@@ -144,15 +163,15 @@
     <a href="#contact">Contact</a>
   </nav>
   <section id="home">
-    <h1>Hi, I'm Ram 👋</h1>
+    <h1>Hi, I'm Ram</h1>
     <p>A beginner Web Designer learning HTML, CSS, and JS.</p>
   </section>
   <section id="about">
-    <img src="Mine.jpg" alt="Profile">
+    <img src="Mine.jpg" alt="Profile" id="mine">
     <div>
       <h2>About Me</h2>
       <p>I am a Computer Science student, passionate about web design and development.  
-      I love learning new technologies and building small projects.</p>
+      I love learning new technologies and building projects.</p>
     </div>
   </section>
   <section id="skills">
@@ -171,7 +190,7 @@
     </div>
   </section>
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2>My Projects</h2><br>
     <div class="projects">
       <div class="project">
         <h3>Profile Card</h3>
@@ -214,14 +233,20 @@ ESP32 IoT Device → sends real-time alerts
         <button type="submit">Send message✉️</button><br><br>
     </form>
   </section>
+  <section>
+    <h2>For Direct Contact  </h2>
+     <p> Email📧:ramprasad.s.m28@gmail.com</p>
+     <p> Mobile📱:9344496603</p>
+
+  </section>
   <footer>
     <p>© 2025 Ram Prasad | Portfolio</p>
     <a href="https://www.linkedin.com/in/ramprasad-s-m-5849662a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-        <img src="linkedin_3991775.png" alt="linkedin" id="img">
+        <img src="linkedin_3991775.png" alt="linkedin" id="image">
     </a>
     <a href="https://www.instagram.com/x_._.ram_?igsh=MTFqbWN1eTNvZ2pvZA==">
-        <img src="307779-P800TT-551.jpg" alt="" id="img"></a>
-        <a href="saravananramprasad776@gmail.com" ><img src="mail.jpg" alt="" id="img"></a>
+        <img src="307779-P800TT-551.jpg" alt="instagram"  id="img"></a>
+        <a href="saravananramprasad776@gmail.com" ><img src="mail.jpg" alt="" id="imag" ></a>
   </footer>
   <script>
     function validate(){
