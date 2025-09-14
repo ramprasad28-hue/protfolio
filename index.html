@@ -155,6 +155,15 @@
       0% {background-position: 10%;}
       100%{background-position:200% ;}
     }
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 <body>
@@ -270,6 +279,15 @@ ESP32 IoT Device → sends real-time alerts
                 window.alert("Form Submitted Successfully😊");return true; fm.reset();
               }
             }
+    const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      sec.classList.add("visible");
+    }
+  });
+});
   </script>
 
 </body>
