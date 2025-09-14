@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#notes {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 400px;
+}
+
+#noteInput {
+  padding: 10px;
+  width: 70%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#addNote {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 8px;
+  /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+  background-color: black;
+  color: rgb(226, 225, 225);
+  cursor: pointer;
+}
+
+#noteList {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#noteList li {
+  background: whitesmoke;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}</style>
+<body>
+    <section id="notes">
+  <h2>My Notes</h2>
+  <input type="text" id="noteInput" placeholder="Write your note here...">
+  <button id="addNote">Add</button>
+  <ul id="noteList"></ul>
+</section>
+<script>
+const noteInput = document.getElementById("noteInput");
+const addNoteBtn = document.getElementById("addNote");
+const noteList = document.getElementById("noteList");
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+function displayNotes() {
+  noteList.innerHTML = "";
+  notes.forEach((note, index) => {
+    let li = document.createElement("li");
+    li.textContent = note;
+    li.addEventListener("click", () => deleteNote(index));
+    noteList.appendChild(li);
+  });
+}
+function addNote() {
+  if (noteInput.value.trim() !== "") {
+    notes.push(noteInput.value);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    noteInput.value = "";
+    displayNotes();
+  }
+}
+function deleteNote(index) {
+  notes.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  displayNotes();
+}
+addNoteBtn.addEventListener("click", addNote);
+displayNotes();</script>
+</body>
+</html>
